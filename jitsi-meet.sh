@@ -51,31 +51,33 @@ sudo apt update
 # jitsi-meet installation
 sudo apt install jitsi-meet -y
 
-sudo apt-get -y install jitsi-videobridge
-sudo apt-get -y install jicofo
-sudo apt-get -y install jigasi
+sudo apt -y install jitsi-videobridge
+sudo apt -y install jicofo
+sudo apt -y install jigasi
+
+sudo apt -y install certbot
 
 # Obtaining a Signed TLS Certificate
 sudo /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
 
 # Locking Conference Creation
 sudo nano /etc/prosody/conf.avail/your_domain.cfg.lua
+
 #Edit this line:
         authentication = "anonymous" to
       
-       
-#Then, in the same file, add the following section to the end of the file:
+# Then, in the same file, add the following section to the end of the file:
 VirtualHost "guest.meet.smartbs.co.ug"
     authentication = "anonymous"
   
     
- sudo nano /etc/jitsi/meet/jitsi.smartbs.co.ug-config.js
-#And add the following line to complete the configuration changes:
+ sudo nano /etc/jitsi/meet/jitsi.your_domain-config.js
+# And add the following line to complete the configuration changes:
 org.jitsi.jicofo.auth.URL...
 
 sudo prosodyctl register user your_domain password
 
-#Finally, restart the Jitsi Meet processes to load the new configuration:
+# Finally, restart the Jitsi Meet processes to load the new configuration:
 
 sudo systemctl restart prosody.service
 
