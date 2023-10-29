@@ -25,8 +25,7 @@ sudo nano /etc/hosts
 
 #Then, add the following line:
 
-127.0.0.1 localhost
-192.168.1.70 meet.smartbs.co.ug
+127.0.0.1 meet.smartbs.co.ug
 
 #Configuring the Firewall
 
