@@ -64,7 +64,7 @@ sudo apt -y install certbot
 sudo /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
 
 # Locking Conference Creation
-sudo nano /etc/prosody/conf.avail/your_domain.cfg.lua
+sudo nano /etc/prosody/conf.avail/meet.smartbs.co.ug.cfg.lua
 
 #Edit this line:
         authentication = "anonymous" to
@@ -74,11 +74,11 @@ VirtualHost "guest.meet.smartbs.co.ug"
     authentication = "anonymous"
   
     
- sudo nano /etc/jitsi/meet/jitsi.your_domain-config.js
+ sudo nano /etc/jitsi/meet/meet.smartbs.co.ug-config.js
 # And add the following line to complete the configuration changes:
 org.jitsi.jicofo.auth.URL...
 
-sudo prosodyctl register user your_domain password
+sudo prosodyctl register user meet.smartbs.co.ug password
 
 # Finally, restart the Jitsi Meet processes to load the new configuration:
 
