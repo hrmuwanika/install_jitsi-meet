@@ -83,6 +83,6 @@ sudo prosodyctl register user meet.smartbs.co.ug password
 # Finally, restart the Jitsi Meet processes to load the new configuration:
 
 sudo systemctl restart prosody.service
-
+sudo systemctl restart jicofo.service
 sudo systemctl restart jitsi-videobridge2.service
        
