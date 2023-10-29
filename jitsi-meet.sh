@@ -39,10 +39,13 @@ sudo ufw allow 5349/tcp
 sudo ufw enable
 sudo ufw status
 
-# First install the Jitsi repository key onto your system
-curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg'
+# Add the Prosody package repository
+echo deb http://packages.prosody.im/debian $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list
+wget https://prosody.im/files/prosody-debian-packages.key -O- | sudo apt-key add -
+sudo apt install lua5.2 -y
 
-# Create a sources.list.d file with the repository
+# Add the Jitsi package repository
+curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg'
 echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list > /dev/null
 
 # Update your package list
