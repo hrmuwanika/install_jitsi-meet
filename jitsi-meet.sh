@@ -58,13 +58,13 @@ systemctl restart jitsi-videobridge2
 
 # Jitsi Customization
 # Config File:- /etc/jitsi/meet/[your-domain]-config.js
-/etc/jitsi/meet/meet.ultimateakash.tech-config.js
+# sudo nano /etc/jitsi/meet/$HOST_NAME.$WEBSITE_NAME-config.js
 
 # Interface Config File:- /usr/share/jitsi-meet/interface_config.js
-/usr/share/jitsi-meet/interface_config.js
+# sudo nano /usr/share/jitsi-meet/interface_config.js
 
-# Remove Jitsi Logo
-SHOW_JITSI_WATERMARK: false
+# To remove Jitsi Logo
+#  SHOW_JITSI_WATERMARK: false
 
 # You can customize the jitsi by modifing the config files properties.
 
