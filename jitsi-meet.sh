@@ -27,7 +27,7 @@ sudo ufw status
 # Configure the hostname of the server corresponding to your domain or subdomain.
 sudo hostnamectl set-hostname $HOST_NAME
 sed -i 's/^127.0.1.1.*$/127.0.1.1 $HOST_NAME.$WEBSITE_NAME $HOST_NAME/g' /etc/hosts
-sed -i 's/^127.0.0.1.*$/127.0.0.1 localhost $HOST_NAME.$WEBSITE_NAME $HOST_NAM/g' /etc/hosts
+sed -i 's/^127.0.0.1.*$/127.0.0.1 localhost $HOST_NAME.$WEBSITE_NAME $HOST_NAME/g' /etc/hosts
 
 # Ensure support for apt repositories served via HTTPS
 sudo apt install gnupg2 apt-transport-https nano curl wget nginx certbot net-tools -y
